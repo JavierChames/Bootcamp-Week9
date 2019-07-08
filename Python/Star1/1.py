@@ -9,11 +9,10 @@ while a <= 40:
 
 for i in range(1,101):
     if i %3 == 0:
-        print("Fizz " +str(i))
+        print("Fizz ")
     if i %5 == 0:
-        print("Buzz "+str(i))
+        print("Buzz ")
     if i %5 ==0 and i %3 == 0 :
-         print("FizzBuzz " +str(i) )
-
-
-             
+         print("FizzBuzz ")
+    else:
+        print(str(i))
