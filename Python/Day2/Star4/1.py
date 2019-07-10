@@ -1,11 +1,6 @@
-def count(quote, vowels):
+# def count(quote, vowels):
 
-    final = [each for each in quote if each in vowels]
-    mylist = [
-        i for i, current_char_of_string in enumerate(quote)
-        if current_char_of_string in vowels
-    ]
-    return (mylist)
+    # return [i for i, current_char_of_string in enumerate(quote) if current_char_of_string in vowels ]
 
     # location = 0
     # result = []
@@ -19,4 +14,4 @@ def count(quote, vowels):
 
 quote = "some people drink from the fountain of knowledge, others just gargle."
 vowels = "aeiou"
-print(count(quote, vowels))
+print([i for i, current_char_of_string in enumerate(quote) if current_char_of_string in vowels ])
