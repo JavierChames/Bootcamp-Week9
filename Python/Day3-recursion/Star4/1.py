@@ -6,4 +6,7 @@ def palindrome(text):
   
 
 mystr = "asf"
+mystr1 = "asfsa"
+
 print(palindrome(mystr))
+print(palindrome(mystr1))
