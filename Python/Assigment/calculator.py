@@ -6,7 +6,6 @@ wrong_answer_array = []
 count_good_answer = 0
 count_bad_answer = 0
 
-
 def check_if_continue(answ):  # Check user answer
     if answ in continue_answer or answ in stop_answer:
         if answ in continue_answer:
@@ -16,13 +15,12 @@ def check_if_continue(answ):  # Check user answer
     else:
         return False
 
-
 exercise_counter = 0
 print("Welcome to our Elementary Math, lets start")
 
 def randomize_exercise():
     # Randomize exercise,num1,num2 & operator
-    operator_sign = random.randrange(1, 4)
+    operator_sign = random.randrange(1, 5)
     num1 = random.randrange(1, 11)
     num2 = random.randrange(1, 11)
 
@@ -36,6 +34,11 @@ def randomize_exercise():
           exercise = str(num1) + "-" + str(num2)
     if operator_sign == 3:
         exercise = str(num1) + "*" + str(num2)
+    if operator_sign == 4:
+        while (num1 %num2) != 0 :
+            num1 = random.randrange(1, 11)
+            num2 = random.randrange(1, 11)
+        exercise = str(num1) + "/" + str(num2)    
     return exercise
 
 def check_user_answer(exercise):
@@ -48,8 +51,7 @@ def check_user_answer(exercise):
         count_good_answer += 1
         return True
     else:
-        exercise = exercise + "=" + str(answer) + "(" + str(
-            (eval(exercise))) + ")"
+        exercise = exercise + "=" + str(answer) + "(" + str(int(eval(exercise))) + ")"
         count_bad_answer += 1
         wrong_answer_array.append(exercise)
         return False
