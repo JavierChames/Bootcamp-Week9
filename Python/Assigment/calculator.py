@@ -45,7 +45,7 @@ def check_user_answer(exercise):
     global count_good_answer
     global count_bad_answer
     answer = input("Enter your answer:")
-    while answer.isdigit() == False:
+    while not answer.isdigit():
         answer = input("Enter your answer:")
     if eval(exercise) == int(answer):
         count_good_answer += 1
@@ -64,7 +64,7 @@ def main_flow():
     exercise = randomize_exercise()
     print(exercise + "=?")
 
-    if check_user_answer(str(exercise)) == True:
+    if check_user_answer(str(exercise)):
         print("You Rigth")
     else:
         print("Wrong answer")
@@ -72,7 +72,7 @@ def main_flow():
 main_flow()
 user_answer = input("Would you like to play again?")
 
-while check_if_continue(user_answer) == True:
+while check_if_continue(user_answer):
     main_flow()
     user_answer = input("Would you like to play again?")
 
